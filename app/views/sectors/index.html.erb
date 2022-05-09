@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="header mx-auto my-5">Sector List</h2>
+  <hr>
+  <p style="color: green"><%= notice %></p>
+  <table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sectors.each do |sector| %>
+        <tr>
+          <td>
+            <%=sector.name%>
+          </td>
+          <td>
+            <%= link_to "Info" , sector %>
+          </td>
+        </tr>
+        <%end%>
+    </tbody>
+    </table>
+  <hr>
+  <button class="btn">
+    <%= link_to "New sector" , new_sector_path %>
+  </button>
+</div>

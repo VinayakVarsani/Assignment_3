@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="header mx-auto my-5"><%=@industry.name%> Details</h2>
+<hr>
+<div class="card my-5 px-5" style="width: 18rem;">
+<p style="color: green"><%= notice %></p>
+<h4>Sectors of this industry</h4>
+<% @industry.sectors.each do |sector|%>
+    <%= sector.name%>
+    <%end%>
+<%= render @industry %>
+
+  <button class="btn-warning">
+  <%= link_to "Edit", edit_industry_path(@industry) %>
+  </button>
+  <button class="btn my-5">
+    <%= link_to "Back", industries_path %>
+    </button>
+ 
+</div>
+</div>
+<hr>
+<div class="my-5 px-5" style="margin-left:590px ;">
+<%= button_to "Destroy this industry", @industry, method: :delete %>
+</div>
+</div>
+
